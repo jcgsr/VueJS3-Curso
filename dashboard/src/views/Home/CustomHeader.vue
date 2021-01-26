@@ -11,7 +11,8 @@
         </div>
         <div class="flex">
           <button
-            class="px-6 py-2 font-bold rounded-full text-white focus outline-none"
+            @click="() => emit('create-account')"
+            class="px-6 py-2 font-bold text-white rounded-full outline-none focus"
           >
             Crie uma conta
           </button>
@@ -19,7 +20,8 @@
 
         <div class="flex">
           <button
-            class="px-6 py-2 font-bold bg-white rounded-full text-brand-main focus outline-none"
+          @click="() => emit('login')"
+            class="px-6 py-2 font-bold bg-white rounded-full outline-none text-brand-main focus"
           >
             Entrar
           </button>
@@ -38,7 +40,7 @@
         </p>
         <div>
           <button
-            class="px-6 py-2 mt-10 font-bold bg-white rounded-full text-brand-main focus outline-none"
+            class="px-6 py-2 mt-10 font-bold bg-white rounded-full outline-none text-brand-main focus"
           >
             Crie uma conta grátis
           </button>
@@ -49,7 +51,11 @@
 </template>
 
 <script>
-export default {}
+export default {
+  setup (_, { emit }) {
+    return { emit }
+  }
+}
 </script>
 
 <style lang="postcss" scoped>
